@@ -51,9 +51,6 @@ app.use(function(err, req, res, next) {
   res.render('error', err);
 });
 
-app.listen(process.env.PORT || 3001, function() {
-  console.log('Aplicación ejemplo, escuchando el puerto 3004!');
-});
 
 export default app;
 

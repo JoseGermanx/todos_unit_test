@@ -1,15 +1,22 @@
 /*
 * Conexión a MySQL
  */
-
+import dotenv from 'dotenv';
+dotenv.config();
 import mysql from 'mysql2';
 
+const host = process.env.DATA_BASE_HOST
+const user = process.env.DATA_BASE_USER
+const password = process.env.DATA_BASE_PASSWORD
+const database = process.env.DATA_BASE_NAME
+const port = process.env.DATA_BASE_PORT
+
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'm15126376',
-    database: 'todos',
-    port: 4100,
+    host: host,
+    user: user,
+    password: password,
+    database: database,
+    port: port,
 })
 
 connection.connect((err) => {
